@@ -2,12 +2,11 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://phatpham0209:cpvTC1WEcaEfsQDE@databasechat.9habqeb.mongodb.net/?retryWrites=true&w=majority');
 
 const User = mongoose.model('User', {
-    name: {type: String, required: true},
-    phone: {type: String},
-    isMale: {type: Boolean, default: false}
+    email: {type: String, required: true},
+    password: {type: String, required: true}
 });
 
-module.exports = User
+module.exports = {User}
 
 // Insert
 // const teo = new User({ name: 'Nguyễn Văn Tèo', phone: "01233211111", isMale: true});
