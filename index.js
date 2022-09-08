@@ -1,19 +1,17 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const app = express()
+const server = require('http').createServer()
+const io = require('socket.io')(server)
 
-// parse application/json
-app.use(bodyParser.json())
+io.on("connection", socket => {
+    console.log("onConnection", socket.id, socket.connected);
+  
+    socket.on("disconnect", () => {
+        console.log("onDisconnect");
+    });
+});
+  
+server.listen(3000, () => {
+    console.log('listening on *:3000');
+});
 
-app.get('/test/:id', function (req, res) {
-    console.log(req.params)
-})
-
-app.post('/post', function (req, res) {
-    console.log(req.body)
-})
 
 
-username = "phatpham0209"
-password = "cpvTC1WEcaEfsQDE"
-app.listen(3000)
