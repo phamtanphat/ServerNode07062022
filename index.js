@@ -13,4 +13,7 @@ app.post('/post', function (req, res) {
     console.log(req.body)
 })
 
+
+username = "phatpham0209"
+password = "cpvTC1WEcaEfsQDE"
 app.listen(3000)
