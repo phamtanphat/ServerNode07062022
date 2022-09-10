@@ -5,7 +5,7 @@ const User = mongoose.model('User', {
     email: {type: String, required: true, unique : true},
     token: {type: String, unique : true, default: ""},
     socketId: {type: String, unique : true, default: ""},
-    password: {type: String, required: true, unique : true},
+    password: {type: String, required: true},
     isOnline: {type: Boolean, default: false}
 });
 
