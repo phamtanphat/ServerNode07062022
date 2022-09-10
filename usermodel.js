@@ -2,8 +2,11 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://phatpham0209:cpvTC1WEcaEfsQDE@databasechat.9habqeb.mongodb.net/?retryWrites=true&w=majority');
 
 const User = mongoose.model('User', {
-    email: {type: String, required: true},
-    password: {type: String, required: true}
+    email: {type: String, required: true, unique : true},
+    token: {type: String, unique : true, default: ""},
+    socketId: {type: String, unique : true, default: ""},
+    password: {type: String, required: true, unique : true},
+    isOnline: {type: Boolean, default: false}
 });
 
 module.exports = {User}
